@@ -34,6 +34,7 @@ def main():
 def get_tweets_and_del(api):
     for tweet in tweepy.Cursor(api.user_timeline, screen_name = USERNAME, include_rts = True).items():
         api.destroy_status(tweet.id)
+        print(tweet.id)
 
 if __name__ == "__main__":
     main()
